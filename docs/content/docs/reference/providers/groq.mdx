@@ -131,6 +131,7 @@ This model has been tested with Tambo component generation tasks and shows issue
 
 Based on testing with component generation tasks, the following issues have been observed:
 
+<<<<<<< HEAD
 - **JSON Escaping in Component Attributes**: The fields attribute contains unescaped JSON strings. This will cause parsing errors because quotes aren't escaped. (e.g., fields="[{"id":"text_field","type":"text",...}]")
 
 - **Verbose Explanatory Text**: The model tends to include unnecessary explanatory text before and after component tags (e.g., "The form component is now displayed below" or "Your form now includes an email input field"). While not breaking, this adds noise to responses.
@@ -139,6 +140,15 @@ Based on testing with component generation tasks, the following issues have been
 
 - **Streaming Error**: The model throws error while streaming sometimes.
 
+=======
+- **JSON Escaping in Component Attributes**: The fields attribute contains unescaped JSON strings. This will cause parsing errors because quotes aren't escaped. (e.g., `fields="[{"id":"text_field","type":"text",...}]"`)
+
+- **Verbose Explanatory Text**: The model tends to include unnecessary explanatory text before and after component tags (e.g., "The form component is now displayed below" or "Your form now includes an email input field"). While not breaking, this adds noise to responses.
+
+- **Invalid Component Syntax**: Uses non-standard XML-like syntax that won't render properly. (e.g., `<show_component_FormComponent ... ></show_component_FormComponent>`)
+
+- **Streaming Error**: The model throws error while streaming sometimes.
+>>>>>>> 9f6f4088e721aa73537de39b4f8cc9e150050655
 
 ## Configuration
 
