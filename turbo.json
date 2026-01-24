@@ -14,6 +14,7 @@
     "EMAIL_FROM_PERSONAL",
     "EMAIL_REPLY_TO_PERSONAL",
     "EMAIL_REPLY_TO_SUPPORT",
+    "EXPO_OS",
     "EXTRACTION_OPENAI_API_KEY",
     "FALLBACK_OPENAI_API_KEY",
     "FORCE_INTERACTIVE",
@@ -126,6 +127,16 @@
     "test": { "dependsOn": ["^test"] },
     "@tambo-ai-cloud/web#test": {
       "dependsOn": ["@tambo-ai/react#build", "^test"]
+    },
+    "@tambo-ai/react-native#build": {
+      "dependsOn": ["@tambo-ai/react#build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**", "esm/**"]
+    },
+    "showcase-react-native#build": {
+      "dependsOn": ["@tambo-ai/react-native#build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**", "esm/**"]
     }
   }
 }

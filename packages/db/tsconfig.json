@@ -1,6 +1,7 @@
 {
   "extends": "@tambo-ai/typescript-config/base.json",
   "compilerOptions": {
+    "types": ["node"],
     "outDir": "./dist",
     "module": "ESNext",
     "moduleResolution": "Bundler",

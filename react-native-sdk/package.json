@@ -1,0 +1,78 @@
+{
+  "name": "@tambo-ai/react-native",
+  "version": "0.69.1",
+  "description": "React Native SDK for Tambo AI - Generative UI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tambo-ai/tambo.git",
+    "directory": "react-native-sdk"
+  },
+  "homepage": "https://tambo.co",
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./mcp": {
+      "import": "./esm/mcp/index.js",
+      "require": "./dist/mcp/index.js",
+      "types": "./dist/mcp/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "esm",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "check-types": "tsc --noEmit",
+    "test": "jest --config jest.config.ts",
+    "format": "prettier --write .",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:lint": "npm run format && npm run lint:fix",
+    "clean": "rimraf dist esm coverage"
+  },
+  "peerDependencies": {
+    "@tambo-ai/react": "*",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-native": ">=0.70.0",
+    "zod": "^3.25.76 || ~4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tambo-ai/react": {
+      "optional": false
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@tambo-ai/react": "*"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@tambo-ai/eslint-config": "*",
+    "@tambo-ai/typescript-config": "*",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.19.5",
+    "@types/react": "^18.3.23",
+    "@types/react-native": "^0.73.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^6.1.1",
+    "jest": "^30.2.0",
+    "prettier": "^3.8.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  }
+}

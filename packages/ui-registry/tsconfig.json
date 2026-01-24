@@ -1,6 +1,7 @@
 {
   "extends": "@tambo-ai/typescript-config/react-library.json",
   "compilerOptions": {
+    "types": ["react", "react-dom"],
     "module": "ESNext",
     "moduleResolution": "Bundler"
   },

@@ -6,4 +6,9 @@ export default defineConfig(...config, {
     // Temporarily turning this off to reduce noise
     "@typescript-eslint/no-explicit-any": "off",
   },
+  languageOptions: {
+    parserOptions: {
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
 });
